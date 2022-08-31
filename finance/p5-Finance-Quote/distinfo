@@ -3,3 +3,4 @@ $NetBSD: distinfo,v 1.21 2021/10/26 10:26:03 nia Exp $
 BLAKE2s (Finance-Quote-1.52.tar.gz) = 95067c3b1788cb8b7e8bbb90760310647d8bfb1a6015009ee945680b0219f49b
 SHA512 (Finance-Quote-1.52.tar.gz) = 1d0198bd4972e7e81886591d262419fae7e5a9e1b0ac45850d9ac862c6b6dab9e08ed6ad8b3cecc437fee0331f558ebc15d9cb3636f78c932bbdb004cef0905b
 Size (Finance-Quote-1.52.tar.gz) = 242120 bytes
+SHA1 (patch-lib_Finance_Quote_CurrencyRates_AlphaVantage.pm) = f070fb8fd9a31cf147760f2127c279b93cc88a74
