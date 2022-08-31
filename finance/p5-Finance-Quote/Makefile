@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.39 2021/05/24 19:52:13 wiz Exp $
 
-DISTNAME=	Finance-Quote-1.51
+DISTNAME=	Finance-Quote-1.52
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Finance/}
@@ -19,6 +19,9 @@ DEPENDS+=	p5-JSON-[0-9]*:../../converters/p5-JSON
 DEPENDS+=	p5-String-Util-[0-9]*:../../devel/p5-String-Util
 DEPENDS+=	p5-Text-Template-[0-9]*:../../textproc/p5-Text-Template
 DEPENDS+=	p5-libwww>=5.48:../../www/p5-libwww
+DEPENDS+=	p5-Web-Scraper-[0-9]*:../../www/p5-Web-Scraper
+DEPENDS+=	p5-Spreadsheet-XLSX-[0-9]*:../../math/p5-Spreadsheet-XLSX
+DEPENDS+=	p5-HTML-TokeParser-Simple-[0-9]*:../../www/p5-HTML-TokeParser-Simple
 
 REPLACE_PERL=	lib/Finance/Quote.pm
 REPLACE_PERL+=	lib/Finance/Quote/*.pm
