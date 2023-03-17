@@ -1,9 +1,10 @@
 $NetBSD: distinfo,v 1.38 2021/12/20 20:59:42 nia Exp $
 
-BLAKE2s (darktable-3.6.1.tar.xz) = 932127244f3046004ebec7d1f89c1f9b7391a8aa5e4d7c3475c1ee6a453efa7b
-SHA512 (darktable-3.6.1.tar.xz) = d53eb8472531c62ceebe97769c6e53f7c9ed6efb404905295f00b5bf547fd0f0c395b8b926ccafc78d6cf9fed0745da655a77eeb84d92fce5d6a7a576f277416
-Size (darktable-3.6.1.tar.xz) = 4685928 bytes
+BLAKE2s (darktable-4.2.1.tar.xz) = dc42fb096a17cc3e820759c614ae417c1c857c9f2614cf8ae3febcdc5167b8d9
+SHA512 (darktable-4.2.1.tar.xz) = 05423c16ff813c10fa2bedbb22bbc886f2cff81aad2493c720f4b2fe32ba89b55c428287cd1c4b24cc98121d441375752015f88c30f796ea46db18461e212d5d
+Size (darktable-4.2.1.tar.xz) = 6112480 bytes
 SHA1 (patch-cmake_compiler-warnings.cmake) = b65fbb5222cca791088137e823402df6b9423121
 SHA1 (patch-src_CMakeLists.txt) = d433361d7196c42100212dc087a3baa8fb6ba931
 SHA1 (patch-src_common_system__signal__handling.c) = 296f5618c618a9b16af2ca5a1d9ff408c437c220
+SHA1 (patch-src_imageio_format_exr.cc) = 5428875a3fef85fdfb3132fb4ef58c74acf34ee9
 SHA1 (patch-tools_noise_benchmark.sh) = 1e26ebbbc73e44ec41c092297d681f33fb55155d
