@@ -6,5 +6,4 @@ Size (darktable-4.2.1.tar.xz) = 6112480 bytes
 SHA1 (patch-cmake_compiler-warnings.cmake) = b65fbb5222cca791088137e823402df6b9423121
 SHA1 (patch-src_CMakeLists.txt) = d433361d7196c42100212dc087a3baa8fb6ba931
 SHA1 (patch-src_common_system__signal__handling.c) = 296f5618c618a9b16af2ca5a1d9ff408c437c220
-SHA1 (patch-src_imageio_format_exr.cc) = 5428875a3fef85fdfb3132fb4ef58c74acf34ee9
 SHA1 (patch-tools_noise_benchmark.sh) = 1e26ebbbc73e44ec41c092297d681f33fb55155d
