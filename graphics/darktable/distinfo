@@ -3,4 +3,16 @@ $NetBSD: distinfo,v 1.40 2023/09/06 21:04:20 nia Exp $
 BLAKE2s (darktable-4.6.0.tar.xz) = 004a1b639187debcdbacb8c35b2124dd70aaf0556aa13dd15a5b7a7dca5f8205
 SHA512 (darktable-4.6.0.tar.xz) = 825a63c9b8bd7420f5c4b53a9281587be92088e1cd617faaf1de2b455503092cc7476872803a1d82c7bf57fcc57f85a40fc4af8ca04367e48719030f08726df7
 Size (darktable-4.6.0.tar.xz) = 6129572 bytes
+SHA1 (patch-src_common_darktable.h) = 8828a1285ae5875ab5def3ebf1ff671c3f17e755
+SHA1 (patch-src_common_exif.cc) = b5785d7bcad90309f517cd6fbddb2d89beebad61
+SHA1 (patch-src_develop_masks_brush.c) = e70072f42797e9c59fb5e68a4eb6af86db96904c
+SHA1 (patch-src_develop_masks_circle.c) = 6dc535117ada1c87e0197c5b55374a0efb446040
+SHA1 (patch-src_develop_masks_ellipse.c) = 2ad3658d43dc8ed5e22689ad672d787192519eb8
+SHA1 (patch-src_develop_masks_gradient.c) = ea383d93a3afc3c5721c42caebd53ceb4f29d782
+SHA1 (patch-src_develop_masks_group.c) = fc6e748ef7130434e7ec5bc4a07d284f789142fd
+SHA1 (patch-src_develop_masks_path.c) = 61dd8c17094b0940b4d53b36fabe3af26442a5cf
 SHA1 (patch-src_external_rawspeed_cmake_src-dependencies.cmake) = 41733d3ad6d440782fb5c8f790668ab18a53f934
+SHA1 (patch-src_external_rawspeed_src_utilities_identify_CMakeLists.txt) = 86da8c8025e170a03f485c40173703b399869378
+SHA1 (patch-src_imageio_imageio__exr.cc) = d85949cb78cdce15feebe779555a6992e515afa6
+SHA1 (patch-src_imageio_imageio__rawspeed.cc) = 76fa12766a242741bbc796ad40581d5fcd20e52d
+SHA1 (patch-src_iop_demosaicing_amaze.cc) = c94f38482c9fdc89c507646a76f260644d5d69ac
