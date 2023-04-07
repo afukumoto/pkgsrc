@@ -1,6 +1,7 @@
 # $NetBSD: Makefile,v 1.145 2023/09/01 16:23:09 nia Exp $
 
 DISTNAME=	darktable-4.4.2
+PKGREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GITHUB:=darktable-org/}
 GITHUB_PROJECT=	darktable
@@ -34,7 +35,7 @@ CMAKE_ARGS+=	-DGMODULE_INCLUDE_DIR:PATH=${BUILDLINK_PREFIX.glib2}/include
 # Honour system CFLAGS.
 CMAKE_ARGS+=	-DCUSTOM_CFLAGS=ON
 CMAKE_ARGS+=	-DUSE_OPENCL=OFF
-CMAKE_ARGS+=	-DUSE_OPENMP=OFF
+# CMAKE_ARGS+=	-DUSE_OPENMP=OFF
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Release
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=Yes
@@ -93,6 +94,14 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
 .include "../../lang/lua54/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../print/libcups/buildlink3.mk"
+PKGSRC_COMPILER= clang
+CMAKE_ARGS+=	-DLIBS='-lgcc -lgcc_s'
+CFLAGS+= -Wno-gnu-zero-variadic-macro-arguments
+#PKG_CC=		${PREFIX}/bin/clang
+#PKG_CXX=	${PREFIX}/bin/clang++
+BUILDLINK_DEPMETHOD.clang=     build
+.include "../../lang/clang/buildlink3.mk"
+.include "../../parallel/openmp/buildlink3.mk"
 .include "../../security/libsecret/buildlink3.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../textproc/icu/buildlink3.mk"
