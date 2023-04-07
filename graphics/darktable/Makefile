@@ -85,6 +85,7 @@ BUILDLINK_API_DEPENDS.zlib+=	zlib>=1.2.11
 .include "../../graphics/GraphicsMagick/buildlink3.mk"
 .include "../../graphics/exiv2/buildlink3.mk"
 .include "../../graphics/gegl/buildlink3.mk"
+.include "../../graphics/libheif/buildlink3.mk"
 .include "../../graphics/librsvg/buildlink3.mk"
 .include "../../graphics/lensfun/buildlink3.mk"
 .include "../../graphics/lcms2/buildlink3.mk"
