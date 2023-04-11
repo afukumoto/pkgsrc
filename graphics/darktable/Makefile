@@ -100,7 +100,7 @@ CFLAGS+= -Wno-gnu-zero-variadic-macro-arguments
 #PKG_CXX=	${PREFIX}/bin/clang++
 BUILDLINK_DEPMETHOD.clang=     build
 .include "../../lang/clang/buildlink3.mk"
-.include "../../lang/lua53/buildlink3.mk"
+.include "../../lang/lua54/buildlink3.mk"
 .include "../../net/flickcurl/buildlink3.mk"
 .include "../../net/libsoup/buildlink3.mk"
 .include "../../parallel/openmp/buildlink3.mk"
