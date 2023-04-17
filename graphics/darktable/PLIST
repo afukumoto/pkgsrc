@@ -15,8 +15,8 @@ lib/darktable/plugins/imageio/format/libpfm.so
 lib/darktable/plugins/imageio/format/libpng.so
 lib/darktable/plugins/imageio/format/libppm.so
 lib/darktable/plugins/imageio/format/libtiff.so
-lib/darktable/plugins/imageio/format/libwebp.so
 lib/darktable/plugins/imageio/format/libxcf.so
+${PLIST.webp}lib/darktable/plugins/imageio/format/libwebp.so
 lib/darktable/plugins/imageio/storage/libdisk.so
 lib/darktable/plugins/imageio/storage/libemail.so
 lib/darktable/plugins/imageio/storage/libgallery.so
@@ -113,7 +113,7 @@ lib/darktable/plugins/libvignette.so
 lib/darktable/plugins/libwatermark.so
 lib/darktable/plugins/libzonesystem.so
 lib/darktable/plugins/lighttable/libbackgroundjobs.so
-lib/darktable/plugins/lighttable/libcamera.so
+${PLIST.gphoto2}lib/darktable/plugins/lighttable/libcamera.so
 lib/darktable/plugins/lighttable/libcollect.so
 lib/darktable/plugins/lighttable/libcolorlabels.so
 lib/darktable/plugins/lighttable/libcolorpicker.so
@@ -124,7 +124,7 @@ lib/darktable/plugins/lighttable/libexport.so
 lib/darktable/plugins/lighttable/libfilmstrip.so
 lib/darktable/plugins/lighttable/libfilter.so
 lib/darktable/plugins/lighttable/libfiltering.so
-lib/darktable/plugins/lighttable/libgamepad.so
+${PLIST.sdl2}lib/darktable/plugins/lighttable/libgamepad.so
 lib/darktable/plugins/lighttable/libgeotagging.so
 lib/darktable/plugins/lighttable/libglobal_toolbox.so
 lib/darktable/plugins/lighttable/libhinter.so
@@ -135,7 +135,7 @@ lib/darktable/plugins/lighttable/libimage_infos.so
 lib/darktable/plugins/lighttable/libimport.so
 lib/darktable/plugins/lighttable/libioporder.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
-lib/darktable/plugins/lighttable/liblive_view.so
+${PLIST.gphoto2}lib/darktable/plugins/lighttable/liblive_view.so
 lib/darktable/plugins/lighttable/libmasks.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
@@ -157,7 +157,7 @@ lib/darktable/views/libdarkroom.so
 lib/darktable/views/liblighttable.so
 lib/darktable/views/libprint.so
 lib/darktable/views/libslideshow.so
-lib/darktable/views/libtethering.so
+${PLIST.gphoto2}lib/darktable/views/libtethering.so
 man/man1/darktable-cli.1
 man/man1/darktable-cltest.1
 man/man1/darktable-cmstest.1
