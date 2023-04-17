@@ -42,7 +42,6 @@ CMAKE_CONFIGURE_ARGS+=	-DGMODULE_INCLUDE_DIR:PATH=${BUILDLINK_PREFIX.glib2}/incl
 # Honour system CFLAGS.
 CMAKE_CONFIGURE_ARGS+=	-DCUSTOM_CFLAGS=ON
 CMAKE_CONFIGURE_ARGS+=	-DUSE_OPENCL=OFF
-CMAKE_CONFIGURE_ARGS+=	-DUSE_OPENMP=OFF
 
 CMAKE_CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE=Release
 CMAKE_CONFIGURE_ARGS+=	-DBINARY_PACKAGE_BUILD=Yes
@@ -75,6 +74,8 @@ CHECK_PORTABILITY_SKIP+=	packaging/macosx/start
 pre-configure:
 	${MKDIR} ${WRKDIR}/pkgsrc_build
 
+.include "options.mk"
+
 # exiftool presence controls whether a script is installed.  It is
 # simplest to just depend, and almost everyone who would used
 # darktable would want exiftool anyway.
@@ -92,17 +93,13 @@ BUILDLINK_API_DEPENDS.pugixml+=	pugixml>=1.5
 
 .include "../../databases/sqlite3/buildlink3.mk"
 .include "../../devel/glib2/buildlink3.mk"
-.include "../../devel/SDL2/buildlink3.mk"
-.include "../../devel/libgphoto2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
-.include "../../graphics/GraphicsMagick/buildlink3.mk"
 .include "../../graphics/exiv2/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
 .include "../../graphics/lensfun/buildlink3.mk"
 .include "../../graphics/lcms2/buildlink3.mk"
 .include "../../graphics/libheif/buildlink3.mk"
 .include "../../graphics/librsvg/buildlink3.mk"
-.include "../../graphics/libwebp/buildlink3.mk"
 .include "../../graphics/openexr/buildlink3.mk"
 .include "../../graphics/openjpeg/buildlink3.mk"
 .include "../../graphics/png/buildlink3.mk"
