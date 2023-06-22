@@ -16,6 +16,7 @@ SUBST_STAGE.opt+=	pre-configure
 SUBST_SED.opt+=		-e "s,pragma GCC optimize,pragma GCC nooptimize,g"
 SUBST_FILES.opt+=	src/iop/*.c
 SUBST_FILES.opt+=	src/iop/demosaicing/*.c
+#SUBST_FILES.opt+=	src/iop/*.h
 SUBST_FILES.opt+=	src/develop/blends/*.c
 SUBST_FILES.opt+=	src/common/*.c
 SUBST_FILES.opt+=	src/common/*.h

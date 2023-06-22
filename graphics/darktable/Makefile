@@ -1,7 +1,7 @@
 # $NetBSD: Makefile,v 1.152 2024/01/30 14:22:07 ryoon Exp $
 
-DISTNAME=	darktable-4.4.2
-PKGREVISION=	7
+DISTNAME=	darktable-4.6.0
+PKGREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GITHUB:=darktable-org/}
 GITHUB_PROJECT=	darktable
@@ -49,6 +49,8 @@ CMAKE_ARG_PATH=	${WRKSRC}
 LDFLAGS+=	${COMPILER_RPATH_FLAG}${PREFIX}/lib/darktable
 
 .include "../../mk/bsd.fast.prefs.mk"
+GCC_REQD+=	12.0
+CMAKE_ARGS+=	-DLIBS='-lgcc -lgcc_s'
 .if ${MACHINE_ARCH} == "i386"
 # SSE alignment issues
 CFLAGS+=	-mstackrealign -msse2 -march=i686
@@ -73,15 +75,24 @@ pre-configure:
 # darktable would want exiftool anyway.
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
 
-BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
-.include "../../databases/sqlite3/buildlink3.mk"
+BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
+
 .include "../../devel/cmake/build.mk"
+
+.include "../../databases/sqlite3/buildlink3.mk"
+.include "../../devel/GConf/buildlink3.mk"
 .include "../../devel/SDL2/buildlink3.mk"
+.include "../../devel/gettext-lib/buildlink3.mk"
+.include "../../devel/glib2/buildlink3.mk"
+.if ${OPSYS} != "SunOS" && ${OPSYS} != "Linux"
+.include "../../devel/libinotify/buildlink3.mk"
+.endif
 .include "../../devel/libgphoto2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../graphics/GraphicsMagick/buildlink3.mk"
 .include "../../graphics/exiv2/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
+.include "../../graphics/gegl/buildlink3.mk"
 .include "../../graphics/lensfun/buildlink3.mk"
 .include "../../graphics/lcms2/buildlink3.mk"
 .include "../../graphics/libheif/buildlink3.mk"
@@ -93,7 +104,9 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
 .include "../../graphics/tiff/buildlink3.mk"
 .include "../../lang/lua54/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
-.include "../../print/libcups/buildlink3.mk"
+.include "../../net/flickcurl/buildlink3.mk"
+.include "../../net/libsoup/buildlink3.mk"
+.include "../../print/cups-base/buildlink3.mk"
 .include "../../security/libsecret/buildlink3.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../textproc/icu/buildlink3.mk"
@@ -102,6 +115,7 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../textproc/pugixml/buildlink3.mk"
 .include "../../www/curl/buildlink3.mk"
+BUILDLINK_API_DEPENDS.gtk3+=	gtk3+>=3.24.15
 .include "../../x11/gtk3/buildlink3.mk"
 .include "../../x11/libICE/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
