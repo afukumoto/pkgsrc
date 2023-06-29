@@ -15,7 +15,6 @@ lib/darktable/plugins/imageio/format/libpfm.so
 lib/darktable/plugins/imageio/format/libpng.so
 lib/darktable/plugins/imageio/format/libppm.so
 lib/darktable/plugins/imageio/format/libtiff.so
-lib/darktable/plugins/imageio/format/libwebp.so
 lib/darktable/plugins/imageio/format/libxcf.so
 ${PLIST.webp}lib/darktable/plugins/imageio/format/libwebp.so
 lib/darktable/plugins/imageio/storage/libdisk.so
