@@ -3,7 +3,7 @@
 PKG_OPTIONS_VAR=	PKG_OPTIONS.darktable
 PKG_OPTIONS_OPTIONAL_GROUPS=	magick
 PKG_OPTIONS_GROUP.magick=	graphicsmagick imagemagick
-PKG_SUPPORTED_OPTIONS=	gphoto2 openmp sdl2
+PKG_SUPPORTED_OPTIONS=	gphoto2 openmp sdl2 libwebp
 PKG_SUGGESTED_OPTIONS=	gphoto2 graphicsmagick openmp
 
 .include "../../mk/bsd.options.mk"
@@ -48,19 +48,27 @@ CMAKE_ARGS+=	-DUSE_SDL2=OFF
 .endif
 
 ###
-### GraphicsMagick or ImageMagick for misc image format support
+### libwebp for WebP import & export
 ###
 PLIST_VARS+=	webp
+.if !empty(PKG_OPTIONS:Mlibwebp)
+PLIST.webp=	yes
+.include "../../graphics/libwebp/buildlink3.mk"
+.else
+CMAKE_ARGS+=	-DUSE_WEBP=OFF
+.endif
+
+###
+### GraphicsMagick or ImageMagick for misc image format support
+###
 .if !empty(PKG_OPTIONS:Mgraphicsmagick)
 .include "../../graphics/GraphicsMagick/buildlink3.mk"
 .else
 CMAKE_ARGS+=	-DUSE_GRAPHICSMAGICK=OFF
 .if !empty(PKG_OPTIONS:Mimagemagick)
-PLIST.webp=	yes
 CMAKE_ARGS+=	-DUSE_IMAGEMAGICK=ON
 .include "../../graphics/ImageMagick/buildlink3.mk"
 .else
 CMAKE_ARGS+=	-DUSE_IMAGEMAGICK=OFF
-CMAKE_ARGS+=	-DUSE_WEBP=OFF
 .endif
 .endif
