@@ -101,6 +101,7 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
 .include "../../graphics/tiff/buildlink3.mk"
 .include "../../lang/lua54/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
+.include "../../math/imath/buildlink3.mk"
 .include "../../net/flickcurl/buildlink3.mk"
 .include "../../net/libsoup/buildlink3.mk"
 .include "../../print/libcups/buildlink3.mk"
