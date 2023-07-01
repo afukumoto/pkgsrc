@@ -353,12 +353,14 @@ share/icons/hicolor/scalable/apps/darktable.svg
 share/locale/de/LC_MESSAGES/darktable.mo
 share/locale/en@truecase/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
+share/locale/fi/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/he/LC_MESSAGES/darktable.mo
 share/locale/hu/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/pl/LC_MESSAGES/darktable.mo
 share/locale/pt_BR/LC_MESSAGES/darktable.mo
+share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo

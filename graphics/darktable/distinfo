@@ -1,8 +1,8 @@
 $NetBSD: distinfo,v 1.38 2021/12/20 20:59:42 nia Exp $
 
-BLAKE2s (darktable-4.4.0.tar.xz) = 623f7704b3e73326ed7aee67459bd023fbf50e5382a37efca87e3ce16df7f8ef
-SHA512 (darktable-4.4.0.tar.xz) = 61a0280b78c6862cc1cac009ee41a20077b17f75eede28c3598ce01951dd122fd65e2baf891ae69be9202736d139bb8cf53ad71afd87ab112e66ce389d635861
-Size (darktable-4.4.0.tar.xz) = 5794168 bytes
+BLAKE2s (darktable-4.4.1.tar.xz) = 83b724c86c45957fb7e3ee329a0021dc3e66d4d603b5ea14303421dea0d456b3
+SHA512 (darktable-4.4.1.tar.xz) = 20af12232957416693515745d28e49351c8e2c20a5c0ea4b11672167aa8521b5377cdbd17fad1a258d97aad0e9f31f55b9f86c816e613e91ef1910edc7d71099
+Size (darktable-4.4.1.tar.xz) = 5956860 bytes
 SHA1 (patch-src_CMakeLists.txt) = d433361d7196c42100212dc087a3baa8fb6ba931
 SHA1 (patch-src_common_darktable.h) = 8f7facffdd878205787b8f2f046a56bce014a2d5
 SHA1 (patch-src_develop_masks_brush.c) = e70072f42797e9c59fb5e68a4eb6af86db96904c
