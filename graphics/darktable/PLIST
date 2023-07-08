@@ -7,8 +7,8 @@ bin/darktable-generate-cache
 bin/darktable-rs-identify
 lib/darktable/libdarktable.so
 lib/darktable/plugins/imageio/format/libcopy.so
-lib/darktable/plugins/imageio/format/libexr.so
-lib/darktable/plugins/imageio/format/libj2k.so
+${PLIST.openexr}lib/darktable/plugins/imageio/format/libexr.so
+${PLIST.jp2}lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
 lib/darktable/plugins/imageio/format/libpdf.so
 lib/darktable/plugins/imageio/format/libpfm.so
@@ -138,7 +138,7 @@ lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
 lib/darktable/plugins/lighttable/libmodulegroups.so
 lib/darktable/plugins/lighttable/libnavigation.so
-lib/darktable/plugins/lighttable/libprint_settings.so
+${PLIST.cups}lib/darktable/plugins/lighttable/libprint_settings.so
 lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
@@ -152,7 +152,7 @@ lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/libdarkroom.so
 lib/darktable/views/libknight.so
 lib/darktable/views/liblighttable.so
-lib/darktable/views/libprint.so
+${PLIST.cups}lib/darktable/views/libprint.so
 lib/darktable/views/libslideshow.so
 ${PLIST.gphoto2}lib/darktable/views/libtethering.so
 man/man1/darktable-cli.1
@@ -165,8 +165,8 @@ share/darktable/darktable.bash
 share/darktable/darktablerc
 share/darktable/gdb_commands
 share/darktable/latex/photobook.cls
-share/darktable/lua/darktable/debug.lua
-share/darktable/luarc
+${PLIST.lua}share/darktable/lua/darktable/debug.lua
+${PLIST.lua}share/darktable/luarc
 share/darktable/noiseprofiles.json
 share/darktable/pixmaps/dt_logo_128x128.png
 share/darktable/pixmaps/dt_text.svg
