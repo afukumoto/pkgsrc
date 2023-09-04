@@ -72,7 +72,7 @@ pre-configure:
 # darktable would want exiftool anyway.
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
 
-BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
+BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
 .include "../../databases/sqlite3/buildlink3.mk"
 .include "../../devel/cmake/build.mk"
 .include "../../devel/SDL2/buildlink3.mk"
