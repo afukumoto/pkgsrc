@@ -28,6 +28,7 @@ REPLACE_BASH+=	tools/purge_non_existing_images.sh
 REPLACE_BASH+=	tools/purge_unused_tags.sh
 
 CFLAGS+=	-Wno-reserved-id-macro
+CFLAGS+=	-Wl,--copy-dt-needed-entries
 
 CMAKE_ARGS+=	-DLENSFUN_INCLUDE_DIR:PATH=${BUILDLINK_PREFIX.glib2}/include/lensfun
 CMAKE_ARGS+=	-DGTHREAD_INCLUDE_DIR:PATH=${BUILDLINK_PREFIX.glib2}/include
