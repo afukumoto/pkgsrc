@@ -1,6 +1,6 @@
 $NetBSD$
 
---- src/common/exif.cc.orig	2023-12-14 19:44:41.000000000 +0000
+--- src/common/exif.cc.orig	2024-02-16 17:31:09.000000000 +0000
 +++ src/common/exif.cc
 @@ -42,6 +42,8 @@
  
