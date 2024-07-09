@@ -49,7 +49,7 @@ LDFLAGS+=	${COMPILER_RPATH_FLAG}${PREFIX}/lib/darktable
 
 .include "../../mk/bsd.fast.prefs.mk"
 GCC_REQD+=	12.0
-CMAKE_ARGS+=	-DLIBS='-lgcc -lgcc_s'
+#CMAKE_ARGS+=	-DLIBS='-lgcc -lgcc_s'
 .if ${MACHINE_ARCH} == "i386"
 # SSE alignment issues
 CFLAGS+=	-mstackrealign -msse2 -march=i686
@@ -76,7 +76,13 @@ pre-configure:
 # darktable would want exiftool anyway.
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
 
-BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
+CMAKE_REQD+=	3.18
+BUILDLINK_API_DEPENDS.gtk3+=	gtk3+>=3.24.15
+BUILDLINK_API_DEPENDS.glib2+=	glib2>=2.56
+BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.24
+BUILDLINK_API_DEPENDS.curl+=	curl>=7.56
+BUILDLINK_API_DEPENDS.exiv2+=	exiv2>=0.27.2
+BUILDLINK_API_DEPENDS.pugixml+=	pugixml>=1.5
 
 .include "../../devel/cmake/build.mk"
 
@@ -113,7 +119,6 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.15
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../textproc/pugixml/buildlink3.mk"
 .include "../../www/curl/buildlink3.mk"
-BUILDLINK_API_DEPENDS.gtk3+=	gtk3+>=3.24.15
 .include "../../x11/gtk3/buildlink3.mk"
 .include "../../x11/libICE/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
