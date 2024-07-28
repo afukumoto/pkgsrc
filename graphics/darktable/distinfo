@@ -1,7 +1,7 @@
 $NetBSD: distinfo,v 1.41 2024/04/23 22:12:04 wiz Exp $
 
-BLAKE2s (darktable-4.8.0.tar.xz) = 28ba11478d83037ffd467c8306df17d026fc5ec9c3d204ec0911322f0189e926
-SHA512 (darktable-4.8.0.tar.xz) = cb0535274a2862dfb2c8d36149cfced828662e423e04347970c0e2546e4d70ed7ab52cb80b6d21785165a294dee74fc23ba749086aab0a78386936341eb8216a
-Size (darktable-4.8.0.tar.xz) = 6256036 bytes
+BLAKE2s (darktable-4.8.1.tar.xz) = 6bd9665e040e1ccfc5d96bb0178961e6fc6684844f763b8716426679ac58a340
+SHA512 (darktable-4.8.1.tar.xz) = 8c0af6e768e3f3cfd5feb15969c494e63030571140e650920c1a43365c00c1d4c02ba80721c81a86f3191e06a2f150555b4a86b5868d8bebfb49719d70bae5c5
+Size (darktable-4.8.1.tar.xz) = 6258312 bytes
 SHA1 (patch-src_common_utility.c) = fdd088d9b0c0efdaab01c92afddd7bf5f808c8ee
 SHA1 (patch-src_external_rawspeed_cmake_src-dependencies.cmake) = 5278510e765d6a0942a86a77603ac294820841e4
