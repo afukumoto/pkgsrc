@@ -5,4 +5,5 @@ SHA512 (darktable-5.0.0.tar.xz) = 84ccf8e30911d2d8c3d2fc2e5bd51962701a1d755ff385
 Size (darktable-5.0.0.tar.xz) = 6928316 bytes
 SHA1 (patch-src_common_dttypes.h) = f1bd3bed14f29ca734020bf5b47fa414af9d6a0b
 SHA1 (patch-src_common_math.h) = da7ff6dbb6565e8ba39f04f44e72b72eadc5f0c1
-SHA1 (patch-src_common_utility.c) = bd7c5b2855eb36b75cf93fc928dabf5baaa8b552
+SHA1 (patch-src_common_utility.c) = e955e539a2b0397c16ceedb37b27fc30b317c33d
+SHA1 (patch-src_external_rawspeed_cmake_src-dependencies.cmake) = f2b45ce400a1efb6de74f51858219e0253ff4730

@@ -1,6 +1,7 @@
 # $NetBSD: Makefile,v 1.169 2025/01/01 14:06:17 ryoon Exp $
 
 DISTNAME=	darktable-5.0.0
+PKGREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GITHUB:=darktable-org/}
 GITHUB_PROJECT=	darktable
@@ -79,9 +80,18 @@ pre-configure:
 # darktable would want exiftool anyway.
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
 
-BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
-.include "../../databases/sqlite3/buildlink3.mk"
+BUILDLINK_API_DEPENDS.gtk3+=	gtk3+>=3.24.15
+BUILDLINK_API_DEPENDS.glib2+=	glib2>=2.56
+BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.26
+BUILDLINK_API_DEPENDS.curl+=	curl>=7.56
+BUILDLINK_API_DEPENDS.png+=	png>=1.5.0
+BUILDLINK_API_DEPENDS.exiv2+=	exiv2>=0.27.4
+BUILDLINK_API_DEPENDS.pugixml+=	pugixml>=1.5
+
 .include "../../devel/cmake/build.mk"
+
+.include "../../databases/sqlite3/buildlink3.mk"
+.include "../../devel/glib2/buildlink3.mk"
 .include "../../devel/SDL2/buildlink3.mk"
 .include "../../devel/libgphoto2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
@@ -98,6 +108,7 @@ BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
 .include "../../graphics/png/buildlink3.mk"
 .include "../../graphics/tiff/buildlink3.mk"
 .include "../../lang/lua54/buildlink3.mk"
+.include "../../math/imath/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../print/libcups/buildlink3.mk"
 .include "../../security/libsecret/buildlink3.mk"
