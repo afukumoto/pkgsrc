@@ -4,4 +4,5 @@ BLAKE2s (darktable-5.0.0.tar.xz) = 8dcc388c98d77ff3ca06958f9bfb7274a75d54824707c
 SHA512 (darktable-5.0.0.tar.xz) = 84ccf8e30911d2d8c3d2fc2e5bd51962701a1d755ff3859da3e630d0d405d00c03ae8a3968ede33ec53a3de5f8b185ffcb9063355f09149573ce01ede15039de
 Size (darktable-5.0.0.tar.xz) = 6928316 bytes
 SHA1 (patch-src_common_utility.c) = e955e539a2b0397c16ceedb37b27fc30b317c33d
+SHA1 (patch-src_develop_openmp__maths.h) = 409fd20348ab237cf6cd6b977551190a17c13d98
 SHA1 (patch-src_external_rawspeed_cmake_src-dependencies.cmake) = f2b45ce400a1efb6de74f51858219e0253ff4730
