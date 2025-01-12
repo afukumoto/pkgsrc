@@ -1,6 +1,7 @@
 # $NetBSD: Makefile,v 1.169 2025/01/01 14:06:17 ryoon Exp $
 
 DISTNAME=	darktable-5.0.0
+PKGREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GITHUB:=darktable-org/}
 GITHUB_PROJECT=	darktable
@@ -41,7 +42,6 @@ CMAKE_CONFIGURE_ARGS+=	-DGMODULE_INCLUDE_DIR:PATH=${BUILDLINK_PREFIX.glib2}/incl
 # Honour system CFLAGS.
 CMAKE_CONFIGURE_ARGS+=	-DCUSTOM_CFLAGS=ON
 CMAKE_CONFIGURE_ARGS+=	-DUSE_OPENCL=OFF
-CMAKE_CONFIGURE_ARGS+=	-DUSE_OPENMP=OFF
 
 CMAKE_CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE=Release
 CMAKE_CONFIGURE_ARGS+=	-DBINARY_PACKAGE_BUILD=Yes
@@ -74,30 +74,38 @@ CHECK_PORTABILITY_SKIP+=	packaging/macosx/start
 pre-configure:
 	${MKDIR} ${WRKDIR}/pkgsrc_build
 
+.include "options.mk"
+
 # exiftool presence controls whether a script is installed.  It is
 # simplest to just depend, and almost everyone who would used
 # darktable would want exiftool anyway.
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
 
-BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.7.14.1nb1
-.include "../../databases/sqlite3/buildlink3.mk"
+BUILDLINK_API_DEPENDS.gtk3+=	gtk3+>=3.24.15
+BUILDLINK_API_DEPENDS.glib2+=	glib2>=2.56
+BUILDLINK_API_DEPENDS.sqlite3+=	sqlite3>=3.26
+BUILDLINK_API_DEPENDS.curl+=	curl>=7.56
+BUILDLINK_API_DEPENDS.png+=	png>=1.5.0
+BUILDLINK_API_DEPENDS.exiv2+=	exiv2>=0.27.4
+BUILDLINK_API_DEPENDS.pugixml+=	pugixml>=1.5
+
 .include "../../devel/cmake/build.mk"
-.include "../../devel/SDL2/buildlink3.mk"
-.include "../../devel/libgphoto2/buildlink3.mk"
+
+.include "../../databases/sqlite3/buildlink3.mk"
+.include "../../devel/glib2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
-.include "../../graphics/GraphicsMagick/buildlink3.mk"
 .include "../../graphics/exiv2/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
 .include "../../graphics/lensfun/buildlink3.mk"
 .include "../../graphics/lcms2/buildlink3.mk"
 .include "../../graphics/libheif/buildlink3.mk"
 .include "../../graphics/librsvg/buildlink3.mk"
-.include "../../graphics/libwebp/buildlink3.mk"
 .include "../../graphics/openexr/buildlink3.mk"
 .include "../../graphics/openjpeg/buildlink3.mk"
 .include "../../graphics/png/buildlink3.mk"
 .include "../../graphics/tiff/buildlink3.mk"
 .include "../../lang/lua54/buildlink3.mk"
+.include "../../math/imath/buildlink3.mk"
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../print/libcups/buildlink3.mk"
 .include "../../security/libsecret/buildlink3.mk"

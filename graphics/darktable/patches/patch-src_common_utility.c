@@ -1,26 +1,29 @@
-$NetBSD: patch-src_common_utility.c,v 1.1 2025/01/01 14:06:17 ryoon Exp $
+$NetBSD$
 
---- src/common/utility.c.orig	2025-01-01 13:54:43.932082793 +0000
+--- src/common/utility.c.orig	2024-12-15 21:38:01.000000000 +0000
 +++ src/common/utility.c
-@@ -135,17 +135,21 @@ gchar *dt_util_float_to_str(const gchar 
-   setlocale (LC_NUMERIC, "C");
- #else
-   locale_t nlocale = newlocale(LC_NUMERIC_MASK, "C", (locale_t) 0);
-+#if !defined(__NetBSD__)
-   locale_t locale = uselocale(nlocale);
- #endif
-+#endif
+@@ -130,6 +130,16 @@ guint dt_util_str_occurence(const gchar 
  
-   gchar *txt = g_strdup_printf(format, value);
- 
+ gchar *dt_util_float_to_str(const gchar *format, const double value)
+ {
++#if defined(__NetBSD__)
++  locale_t nlocale;
++  int len;
++  gchar *txt;
++
++  nlocale = newlocale(LC_NUMERIC_MASK, "C", (locale_t) 0);
++  len = asprintf_l(&txt, nlocale, format, value);
++  freelocale(nlocale);
++  return txt;
++#else
  #if defined(WIN32)
-   _configthreadlocale(_DISABLE_PER_THREAD_LOCALE);
- #else
-+#if !defined(__NetBSD__)
-   uselocale(locale);
+   _configthreadlocale(_ENABLE_PER_THREAD_LOCALE);
+   setlocale (LC_NUMERIC, "C");
+@@ -147,6 +157,7 @@ gchar *dt_util_float_to_str(const gchar 
    freelocale(nlocale);
  #endif
-+#endif
    return txt;
++#endif
  }
  
+ gchar *dt_util_str_replace(const gchar *string, const gchar *pattern, const gchar *substitute)
